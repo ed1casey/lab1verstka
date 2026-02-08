@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 5 - Группировка картинок</title>
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="lab5var3_Feofanov.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo"></div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Главная</a></li>
+                    <li><a href="../../../index.html#about">Обо мне</a></li>
+                    <li><a href="../../../assignments.html">Задания</a></li>
+                    <li><a href="../../../index.html#contact">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="game-hero">
+            <div class="container">
+                <h1>Задание 5: Перетаскивание объектов</h1>
+                <p class="game-instructions">Перетащите изображения и сгруппируйте их по категориям: млекопитающие, насекомые, птицы. Правой кнопкой мыши можно повернуть изображение.</p>
+            </div>
+        </section>
+
+        <section class="game-section">
+            <div id="canvas" class="game-canvas">
+                <div class="draggable" data-group="mammals" id="cat" style="left: 50px; top: 100px;">
+                    <img src="../cat.jpg" alt="Кошка">
+                </div>
+
+                <div class="draggable" data-group="mammals" id="dog" style="left: 200px; top: 300px;">
+                    <img src="../dog.jpg" alt="Собака">
+                </div>
+
+                <div class="draggable" data-group="insects" id="ladybug" style="left: 400px; top: 150px;">
+                    <img src="../ladybug.jpg" alt="Божья коровка">
+                </div>
+
+                <div class="draggable" data-group="insects" id="grasshopper" style="left: 600px; top: 350px;">
+                    <img src="../grasshopper.jpg" alt="Кузнечик">
+                </div>
+
+                <div class="draggable" data-group="insects" id="dragonfly" style="left: 800px; top: 200px;">
+                    <img src="../dragonfly.jpg" alt="Стрекоза">
+                </div>
+
+                <div class="draggable" data-group="birds" id="chicken" style="left: 150px; top: 450px;">
+                    <img src="../chicken.jpg" alt="Курица">
+                </div>
+
+                <div class="draggable" data-group="birds" id="parrot" style="left: 500px; top: 500px;">
+                    <img src="../parrot.jpg" alt="Попугай">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="success-modal" class="modal hidden">
+        <div class="modal-content">
+            <img src="../happy-dance-happy.gif" alt="Happy Dance" class="success-gif">
+            <h2 class="success-text">Группировка сделана верно!</h2>
+            <button id="restart-btn">Начать заново</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Феофанов Иван Романович</p>
+        </div>
+    </footer>
+
+    <script src="lab5var3_Feofanov.js"></script>
+</body>
+</html>

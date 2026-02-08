@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вариант 3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+        }
+
+        .scene {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+
+        .teapot {
+            position: absolute;
+            top: 43px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .teapot-body {
+            width: 35px;
+            height: 25px;
+            background: linear-gradient(135deg, #ff6b9d 0%, #e91e63 50%, #c2185b 100%);
+            border-radius: 50%;
+            position: relative;
+            box-shadow: inset -4px -4px 8px rgba(0,0,0,0.2), inset 4px 4px 8px rgba(255,255,255,0.3);
+        }
+
+        .teapot-lid {
+            position: absolute;
+            top: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 17px;
+            height: 6px;
+            background: linear-gradient(135deg, #ff6b9d 0%, #e91e63 50%, #c2185b 100%);
+            border-radius: 50% 50% 0 0;
+        }
+
+        .teapot-knob {
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 5px;
+            height: 5px;
+            background: linear-gradient(135deg, #ff6b9d 0%, #e91e63 100%);
+            border-radius: 50%;
+        }
+
+        .teapot-spout {
+            position: absolute;
+            left: -9px;
+            top: 4px;
+            width: 12px;
+            height: 6px;
+            background: linear-gradient(to left, #e91e63, #c2185b);
+            border-radius: 50px 0 0 50px;
+            transform: rotate(20deg);
+        }
+
+        .teapot-handle {
+            position: absolute;
+            right: -6px;
+            top: 5px;
+            width: 10px;
+            height: 15px;
+            border: 3px solid #c2185b;
+            border-left: none;
+            border-radius: 0 50px 50px 0;
+        }
+
+        .table {
+            position: absolute;
+            top: 68px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .table-top {
+            width: 75px;
+            height: 5px;
+            background: linear-gradient(to bottom, #e8923a, #d4782a);
+            border-radius: 1px;
+        }
+
+        .table-stem {
+            width: 10px;
+            height: 42px;
+            background: linear-gradient(to right, #d4782a, #e8923a, #d4782a);
+            margin: 0 auto;
+            border-radius: 20%;
+            transform: scaleX(1.3);
+        }
+
+        .table-base {
+            width: 25px;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 17px solid #e8923a;
+            margin: 0 auto;
+            transform: scaleY(-1);
+        }
+
+        .chair {
+            position: absolute;
+            bottom: 60px;
+            width: 50px;
+            height: 83px;
+        }
+
+        .chair.left { left: 29px; }
+        .chair.right { right: 29px; transform: scaleX(-1); }
+
+        .chair::before {
+            content: "";
+            position: absolute;
+            right: 35px;
+            top: 0;
+            width: 31px;
+            height: 75px;
+            border-right: 4px solid #c7782d;
+            border-radius: 0px 25px 25px 0px;
+        }
+
+        .chair-seat {
+            position: absolute;
+            top: 40px;
+            left: 10px;
+            width: 29px;
+            height: 8px;
+            border-radius: 3px;
+            background: linear-gradient(to right, #e79b42, #bf6923);
+        }
+
+        .chair-leg {
+            position: absolute;
+            width: 6px;
+            height: 27px;
+            bottom: 0;
+            top: 48px;
+            background: linear-gradient(to bottom, #dfa14b, #b46121);
+        }
+
+        .chair-leg.back { left: 31px; }
+
+        .chair-seat::before,
+        .chair-seat::after {
+            content: "";
+            position: absolute;
+            top: 2px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-left: 4px;
+            background: #8e4416;
+            box-shadow: 8px 0 0 #8e4416, 16px 0 0 #8e4416;
+        }
+    </style>
+</head>
+<body>
+    <div class="scene">
+        <div class="teapot">
+            <div class="teapot-knob"></div>
+            <div class="teapot-lid"></div>
+            <div class="teapot-body">
+                <div class="teapot-spout"></div>
+                <div class="teapot-handle"></div>
+            </div>
+        </div>
+
+        <div class="table">
+            <div class="table-top"></div>
+            <div class="table-stem"></div>
+            <div class="table-base"></div>
+        </div>
+
+        <div class="chair left">
+            <div class="chair-seat"></div>
+            <div class="chair-leg back"></div>
+        </div>
+
+        <div class="chair right">
+            <div class="chair-seat"></div>
+            <div class="chair-leg back"></div>
+        </div>
+    </div>
+</body>
+</html>

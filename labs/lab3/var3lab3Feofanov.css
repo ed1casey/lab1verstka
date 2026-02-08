@@ -1,0 +1,154 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.toy-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: filter 0.3s ease;
+}
+
+#sepiaToggle:checked + .toy-container {
+    filter: sepia(100%);
+}
+
+.label-hover {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 1;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    opacity: 0;
+}
+
+.toy-container:hover .label-hover {
+    opacity: 1;
+}
+
+.toy-container:active .label-hover {
+    opacity: 0;
+}
+
+.label-click {
+    position: absolute;
+    top: 25px;
+    left: -5px;
+    color: #00ff00;
+    font-size: 11px;
+    font-weight: bold;
+    z-index: 1;
+    opacity: 0;
+    transform: rotate(-25deg);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+.toy-container:active .label-click {
+    opacity: 1;
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.boy-container {
+    position: absolute;
+    z-index: 1;
+    width: 60px;
+    height: 80px;
+    left: -70px;
+    bottom: 20px;
+    opacity: 0;
+}
+
+.toy-container:hover .boy-container {
+    opacity: 1;
+    animation: runIn 1.5s ease-out forwards;
+}
+
+.toy-container:active .boy-container {
+    animation: none;
+    left: 70px;
+    opacity: 1;
+}
+
+@keyframes runIn {
+    0% { left: -70px; }
+    100% { left: 70px; }
+}
+
+.boy {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.boy-frame-1 {
+    opacity: 1;
+}
+
+.boy-standing {
+    opacity: 0;
+}
+
+.toy-container:active .boy-frame-1 {
+    opacity: 0;
+}
+
+.toy-container:active .boy-standing {
+    opacity: 1;
+}
+
+.pinwheel-container {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 40px;
+    height: 60px;
+    opacity: 0;
+}
+
+.toy-container:active .pinwheel-container {
+    opacity: 1;
+}
+
+.pinwheel-stick {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: -10px;
+    top: 10px;
+    transform-origin: bottom center;
+    transform: rotate(-5deg);
+}
+
+.pinwheel {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    left: -15px;
+    transform-origin: center center;
+}
+
+.toy-container:active .pinwheel {
+    animation: spin 0.3s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+}

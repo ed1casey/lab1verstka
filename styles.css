@@ -1,0 +1,367 @@
+/* Angst - Normal weight */
+@font-face {
+    font-family: 'Angst';
+    src: url('fonts/Angst-Normal.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Angst - Bold weight */
+@font-face {
+    font-family: 'Angst';
+    src: url('fonts/Angst-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Angst - Thin weight */
+@font-face {
+    font-family: 'Angst';
+    src: url('fonts/Angst-Thin.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* Angst - Variable Font (опционально, если хотите использовать вариативный шрифт) */
+@font-face {
+    font-family: 'Angst VF';
+    src: url('fonts/AngstVF.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Angst', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #2c2416;
+    background: #FFF8ED;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #F4E1CB 0%, #EBCFB4 100%);
+    color: #2c2416;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(44,36,22,0.1);
+    border-bottom: 2px solid #EBCFB4;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    background: #FFF8ED;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(44,36,22,0.15);
+    border: 2px solid #EBCFB4;
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, #F4E1CB 0%, #EBCFB4 100%);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    animation: morph 3s ease-in-out infinite;
+}
+
+.logo::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: #FFF8ED;
+    border-radius: 50%;
+}
+
+@keyframes morph {
+    0%, 100% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+    50% {
+        border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+    }
+}
+
+/* Navigation */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    color: #2c2416;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s, color 0.3s;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background: #EBCFB4;
+    color: #1a150d;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #FAEED6 0%, #F4E1CB 100%);
+    color: #2c2416;
+    padding: 4rem 0;
+    text-align: center;
+    border-bottom: 3px solid #EBCFB4;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.85;
+    color: #3d3222;
+}
+
+.intro-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.intro-text p {
+    margin-bottom: 1rem;
+}
+
+/* Content Section */
+.content-section {
+    background: #FFF8ED;
+    padding: 4rem 0;
+}
+
+.content-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #2c2416;
+    text-align: center;
+    font-weight: bold;
+}
+
+.text-image-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.text-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.text-content p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.image-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 1;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(44,36,22,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid #EBCFB4;
+}
+
+.image-grid img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(44,36,22,0.15);
+}
+
+/* Индивидуальная настройка позиции для каждого изображения */
+.image-grid img:nth-child(1) {
+    object-position: center;
+}
+
+.image-grid img:nth-child(2) {
+    object-position: center;
+}
+
+.image-grid img:nth-child(3) {
+    object-position: center;
+}
+
+.image-grid img:nth-child(4) {
+    object-position: center;
+}
+
+.image-grid img:nth-child(5) {
+    grid-column: 1 / -1;
+    object-position: center;
+}
+
+.image-placeholder {
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #FAEED6 0%, #F4E1CB 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2c2416;
+    font-weight: 500;
+    box-shadow: 0 4px 6px rgba(44,36,22,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid #EBCFB4;
+}
+
+.image-placeholder:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(44,36,22,0.15);
+}
+
+.image-placeholder:nth-child(5) {
+    grid-column: 1 / -1;
+}
+
+/* Assignments Preview */
+.assignments-preview {
+    background: #FAEED6;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.assignments-preview h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2c2416;
+    font-weight: bold;
+}
+
+.assignments-preview p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #3d3222;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #F4E1CB 0%, #EBCFB4 100%);
+    color: #2c2416;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(44,36,22,0.2);
+    border: 2px solid #EBCFB4;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(44,36,22,0.3);
+    background: #EBCFB4;
+}
+
+/* Contact Section */
+.contact-section {
+    background: #FFF8ED;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #2c2416;
+    font-weight: bold;
+}
+
+.contact-section p {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #3d3222;
+}
+
+/* Footer */
+footer {
+    background: #EBCFB4;
+    color: #2c2416;
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 2px solid #F4E1CB;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .text-image-block {
+        grid-template-columns: 1fr;
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .image-placeholder:nth-child(5) {
+        grid-column: 1;
+    }
+}
